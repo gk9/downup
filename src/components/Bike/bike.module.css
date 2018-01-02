@@ -1,5 +1,5 @@
 .bikeWrap {
-  width: 160px;
+  width: 150px;
   height: 100px;
   position: absolute;
   top: -100px;
@@ -37,8 +37,63 @@
 .bikeSpoke:nth-child(3) { transform: rotate(135deg); }
 .bikeSpoke:nth-child(4) { transform: rotate(180deg); }
 
-.rider {
+.bikeFrame {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bikeTube {
+  position: absolute;
+  transform-origin: bottom;
+  background: purple;
+  z-index: 1;
+}
+.bikeTube:nth-child(1) {
+  width: 2px;
+  left: 27px;
+  height: 42px;
+  bottom: 28px;
+  transform: rotate(42deg);
+}
+.bikeTube:nth-child(2) {
+  width: 2px;
+  left: 27px;
+  height: 39px;
+  bottom: 28px;
+  transform: rotate(100deg);
+}
+.bikeTube:nth-child(3) {
+  width: 2px;
+  left: 65px;
+  height: 55px;
+  bottom: 21px;
+  transform: rotate(-15deg);
+}
+.bikeTube:nth-child(4) {
+  width: 2px;
+  left: 65px;
+  height: 58px;
+  bottom: 21px;
+  transform: rotate(41deg);
+}
+.bikeTube:nth-child(5) {
+  width: 2px;
+  left: 54px;
+  height: 48px;
+  bottom: 58px;
+  transform: rotate(73deg);
+}
+.bikeTube:nth-child(6) {
+  width: 2px;
+  left: 120px;
+  height: 50px;
+  bottom: 28px;
+  transform: rotate(-25deg);
+}
 
+.rider {
+  position: absolute;
+  left: -5px;
 }
 
 .leg {
@@ -79,8 +134,17 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   transform-origin: center top;
-  transform: rotate(120deg);
+  transform: rotate(90deg);
   animation: legLower 2s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+.legLower:after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  width: 17px;
+  height: 6px;
+  background: #868686;
+  border-radius: 3px;
 }
 .legLower2 {
   animation-delay: 1s;
@@ -90,7 +154,7 @@
     transform: rotate(90deg);
   }
   50% {
-    transform: rotate(10deg);
+    transform: rotate(40deg);
   }
   100% {
     transform: rotate(90deg);

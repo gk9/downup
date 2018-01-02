@@ -14,8 +14,5 @@ export default () => (
     <Bike
       dest="-200"
       theme="purple" />
-    <Bike
-      dest="-400"
-      theme="purple" />
   </Container>
 );

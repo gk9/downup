@@ -11,6 +11,7 @@ class Bike extends React.Component {
       destination: -400,
       down: 0,
       wheelRotate: 0,
+      direction: 0,
     };
   }
 
@@ -19,12 +20,14 @@ class Bike extends React.Component {
       this.setState({
         destination: this.props.dest,
         wheelRotate: 0,
+        // direction: 180,
       });
       bikeDown = false;
     } else {
       this.setState({
         destination: this.state.down,
         wheelRotate: this.state.down * 1.5,
+        direction: 0,
       });
       bikeDown = true;
     }
@@ -61,8 +64,6 @@ class Bike extends React.Component {
   }
 
   render() {
-    const scale = this.props.scale;
-    console.log(scale);
     return (
       <div
         className={styles.bikeWrap}
@@ -70,7 +71,7 @@ class Bike extends React.Component {
         style={{transform: "rotate(" + this.state.angle + "deg)"}}>
         <div
           className={styles.bikeMain}
-          style={{transform: "translateX(" + this.state.destination + "px)"}}>
+          style={{transform: "translateX(" + this.state.destination + "px) rotateY(" + this.state.direction + "deg)"}}>
           <div
             className={styles.bikeWheel}
             style={{transform: "rotate(" + this.state.wheelRotate + "deg)"}}>
@@ -86,6 +87,14 @@ class Bike extends React.Component {
             <div className={styles.bikeSpoke}></div>
             <div className={styles.bikeSpoke}></div>
             <div className={styles.bikeSpoke}></div>
+          </div>
+          <div className={styles.bikeFrame}>
+            <div className={styles.bikeTube}></div>
+            <div className={styles.bikeTube}></div>
+            <div className={styles.bikeTube}></div>
+            <div className={styles.bikeTube}></div>
+            <div className={styles.bikeTube}></div>
+            <div className={styles.bikeTube}></div>
           </div>
           <div className={styles.rider}>
             <div

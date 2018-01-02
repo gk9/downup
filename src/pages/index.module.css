@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #c0ffee;
+}
+
+.background > div {
+	height: 0;
+	border-bottom: 100vh solid #fff;
+	border-left: 100vw solid transparent;
+}

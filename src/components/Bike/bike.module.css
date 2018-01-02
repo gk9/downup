@@ -1,0 +1,164 @@
+.bikeWrap {
+  width: 160px;
+  height: 100px;
+  position: absolute;
+  top: -100px;
+  right: 0;
+  transform-origin: 100% 100%;
+  background: #00000005;
+}
+.bikeMain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 6s ease-in-out;
+}
+.bikeWheel {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  border: 4px solid #000;
+  z-index: 1;
+  transition: transform 6s ease-in-out;
+}
+.bikeWheel:nth-child(2) {right: 0;}
+.bikeSpoke {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 50px;
+  background-color: #b2b2b2;
+}
+.bikeSpoke:nth-child(1) { transform: rotate(45deg); }
+.bikeSpoke:nth-child(2) { transform: rotate(90deg); }
+.bikeSpoke:nth-child(3) { transform: rotate(135deg); }
+.bikeSpoke:nth-child(4) { transform: rotate(180deg); }
+
+.rider {
+
+}
+
+.leg {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background-color: #fff;
+  top: 20px;
+  left: 50px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transform-origin: center top;
+  transform: rotate(-70deg);
+  animation: legUpper 2s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+  z-index: 0;
+}
+.leg2 {
+  animation-delay: 1s;
+  z-index: 2;
+}
+@keyframes legUpper {
+  0% {
+    transform: rotate(-70deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(-70deg);
+  }
+}
+.legLower {
+  position: relative;
+  top: 30px;
+  width: 8px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transform-origin: center top;
+  transform: rotate(120deg);
+  animation: legLower 2s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+.legLower2 {
+  animation-delay: 1s;
+}
+@keyframes legLower {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.riderBody {
+  position: absolute;
+  top: -15px;
+  left: 55px;
+  width: 10px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transform: rotate(20deg);
+  animation: riderRythm 0.5s ease-in-out alternate infinite 0.5s;
+}
+@keyframes riderRythm {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(23deg);
+  }
+}
+.riderHead {
+  position: absolute;
+  top: -22px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.riderArm {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 8px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transform-origin: center top;
+  transform: rotate(118deg);
+
+  /*animation: riderArm 0.5s ease-in-out alternate infinite 0.5s;*/
+}
+.riderArmLower {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 6px;
+  height: 26px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transform: rotate(-206deg);
+  transform-origin: center top;
+  animation: armLower 0.5s ease-in-out alternate infinite 0.5s;
+}
+@keyframes armLower {
+  from {
+    transform: rotate(-200deg);
+  }
+  to {
+    transform: rotate(-206deg);
+  }
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./bike.module.css";
 
-
 let bikeDown = false;
 
 class Bike extends React.Component {
@@ -15,10 +14,10 @@ class Bike extends React.Component {
     };
   }
 
-  handleClick = (todo) => {
+  handleClick = () => {
     if (bikeDown) {
       this.setState({
-        destination: -400,
+        destination: this.props.dest,
         wheelRotate: 0,
       });
       bikeDown = false;
@@ -62,6 +61,8 @@ class Bike extends React.Component {
   }
 
   render() {
+    const scale = this.props.scale;
+    console.log(scale);
     return (
       <div
         className={styles.bikeWrap}
@@ -110,6 +111,4 @@ class Bike extends React.Component {
   }
 }
 
-export default () => (
-  <Bike />
-)
+export default Bike;
